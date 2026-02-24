@@ -8,8 +8,8 @@
 
 ## Project Requirements
 
-- [ ] <details>
-<summary><strong>Large animated player (meta)sprite</strong></summary>
+<details>
+<summary><strong>[ ] Large animated player (meta)sprite</strong></summary>
 
 - [ ] Source image format, production tools, constraints  
 - [ ] Toolchain for generating native format  
@@ -18,8 +18,8 @@
 
 </details>
 
-- [ ] <details>
-<summary><strong>Player Controller</strong></summary>
+<details>
+<summary><strong>[ ] Player Controller</strong></summary>
 
 - [ ] Minimum: move (walk and/or run) left/right  
 - [ ] Minimum: jump  
@@ -36,8 +36,8 @@
 
 </details>
 
-- [ ] <details>
-<summary><strong>Scrolling tiled background</strong></summary>
+<details>
+<summary><strong>[ ] Scrolling tiled background</strong></summary>
 
 - [ ] Source image format, production tools, constraints  
 - [ ] Toolchain for generating native format  
@@ -52,8 +52,8 @@
 
 </details>
 
-- [ ] <details>
-<summary><strong>Collisions</strong></summary>
+<details>
+<summary><strong>[ ] Collisions</strong></summary>
 
 - [ ] Player / Background  
 - [ ] Player / Object  
@@ -62,16 +62,16 @@
 
 </details>
 
-- [ ] <details>
-<summary><strong>Enemy</strong></summary>
+<details>
+<summary><strong>[ ] Enemy</strong></summary>
 
 - [ ] Simple behavior (move left/right)  
 - [ ] Bonus: melee and/or ranged attack  
 
 </details>
 
-- [ ] <details>
-<summary><strong>Items</strong></summary>
+<details>
+<summary><strong>[ ] Items</strong></summary>
 
 - [ ] Walk over item/object to pick up  
 - [ ] Bonus: animation or effect for pick-up  
@@ -79,8 +79,8 @@
 
 </details>
 
-- [ ] <details>
-<summary><strong>Damage / Health</strong></summary>
+<details>
+<summary><strong>[ ] Damage / Health</strong></summary>
 
 - [ ] Player loses health upon touching enemy  
 - [ ] Player dies when health ≤ 0  
@@ -90,8 +90,8 @@
 
 </details>
 
-- [ ] <details>
-<summary><strong>Music</strong></summary>
+<details>
+<summary><strong>[ ] Music</strong></summary>
 
 - [ ] Source music format, production tools, constraints  
 - [ ] Toolchain for producing, exporting, and converting music  
@@ -102,14 +102,14 @@
 
 </details>
 
-- [ ] <details>
-<summary><strong>Sound FX</strong></summary>
+<details>
+<summary><strong>[ ] Sound FX</strong></summary>
 
 - [ ] Source sound format, production tools, constraints  
 - [ ] Toolchain for producing, exporting, and converting sound effects  
 - [ ] Target format (e.g., converter output)  
 - [ ] Code integration into buildable project  
 - [ ] Play sound effects  
-  - [ ] Control sound effects  
+- [ ] Control sound effects  
 
 </details>
