@@ -1,5 +1,3 @@
-#pragma once
-
 #include "bn_core.h"
 #include "bn_memory.h"
 #include "bn_sprite_ptr.h"
@@ -22,6 +20,7 @@
 
 #include "player_movement.h"
 #include "player_animator.h"
+#include "sheep_manager.h"
 #include "enemy.h"
 #include "level.h"
 
@@ -48,25 +47,21 @@ int main()
         idle_hero, 30, bn::sprite_items::shepherd_idle.tiles_item(), 0, 1, 2, 3, 4, 5, 6, 7
     );
 
-    bn::sprite_ptr idle_sheep = bn::sprite_items::sheep_idle.create_sprite(112, -72);
-    bn::sprite_animate_action<4> idle_sheep_anim = bn::create_sprite_animate_action_forever(
-        idle_sheep, 30, bn::sprite_items::sheep_idle.tiles_item(), 0, 1, 2, 3
-        );
-
     player_movement player = player_movement(); //TODO: pass the spawnpoint from the level
     player.set_collision_data(&test_level.get_collision_data());
 
     player_animator animator(idle_hero);
-
-    Enemy enemy = Enemy();
-    // enemy.initialize();
-
 
     // create camera
     bn::camera_ptr camera = bn::camera_ptr::create(0, 0);
 
     idle_hero.set_camera(camera);
     test_level.level_image.set_camera(camera);
+
+    sheep_manager sheep_manager(camera);
+    sheep_manager.spawn_one_sheep();
+    sheep_manager.spawn_one_sheep();
+    sheep_manager.spawn_one_sheep();
 
     while(! bn::keypad::start_pressed())
         {
@@ -97,9 +92,6 @@ int main()
             str.append(" ");
 
             auto text_sprites = text_generator.generate_top_left<32>(0, 0, str);
-
-            // idle_sheperd_anim.update();
-            idle_sheep_anim.update();
             // enemy.updateAnimation();
 
             // update camera
@@ -109,8 +101,8 @@ int main()
             mountains_bg.set_x(-camera.x() / 4);
             houses_bg.set_x(-camera.x() / 2);
             test_level.level_image.set_x(0);
-            enemy.x = camera.x();
-            enemy.y = camera.y();
+
+            sheep_manager.update(player.x, player.y);
 
             bn::core::update();
         }
