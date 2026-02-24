@@ -8,7 +8,7 @@
 
 ## Project Requirements
 
-<details>
+- [ ] <details>
 <summary><strong>Large animated player (meta)sprite</strong></summary>
 
 - [ ] Source image format, production tools, constraints  
@@ -18,7 +18,7 @@
 
 </details>
 
-<details>
+- [ ] <details>
 <summary><strong>Player Controller</strong></summary>
 
 - [ ] Minimum: move (walk and/or run) left/right  
@@ -36,7 +36,7 @@
 
 </details>
 
-<details>
+- [ ] <details>
 <summary><strong>Scrolling tiled background</strong></summary>
 
 - [ ] Source image format, production tools, constraints  
@@ -52,7 +52,7 @@
 
 </details>
 
-<details>
+- [ ] <details>
 <summary><strong>Collisions</strong></summary>
 
 - [ ] Player / Background  
@@ -62,7 +62,7 @@
 
 </details>
 
-<details>
+- [ ] <details>
 <summary><strong>Enemy</strong></summary>
 
 - [ ] Simple behavior (move left/right)  
@@ -70,7 +70,7 @@
 
 </details>
 
-<details>
+- [ ] <details>
 <summary><strong>Items</strong></summary>
 
 - [ ] Walk over item/object to pick up  
@@ -79,7 +79,7 @@
 
 </details>
 
-<details>
+- [ ] <details>
 <summary><strong>Damage / Health</strong></summary>
 
 - [ ] Player loses health upon touching enemy  
@@ -90,7 +90,7 @@
 
 </details>
 
-<details>
+- [ ] <details>
 <summary><strong>Music</strong></summary>
 
 - [ ] Source music format, production tools, constraints  
@@ -102,7 +102,7 @@
 
 </details>
 
-<details>
+- [ ] <details>
 <summary><strong>Sound FX</strong></summary>
 
 - [ ] Source sound format, production tools, constraints  
