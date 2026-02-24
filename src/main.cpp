@@ -1,3 +1,5 @@
+#pragma once
+
 #include "bn_core.h"
 #include "bn_memory.h"
 #include "bn_sprite_ptr.h"
@@ -19,6 +21,7 @@
 #include "common_variable_8x16_sprite_font.h"
 
 #include "player_movement.h"
+#include "player_animator.h"
 #include "enemy.h"
 #include "level.h"
 
@@ -53,6 +56,8 @@ int main()
     player_movement player = player_movement(); //TODO: pass the spawnpoint from the level
     player.set_collision_data(&test_level.get_collision_data());
 
+    player_animator animator(idle_hero);
+
     Enemy enemy = Enemy();
     // enemy.initialize();
 
@@ -66,6 +71,10 @@ int main()
     while(! bn::keypad::start_pressed())
         {
             player.handle_movement();
+            player.update_state();
+
+            animator.set_state(player.currentState);
+            animator.update();
 
             idle_hero.set_horizontal_flip(player.facing_left);
             idle_hero.set_x(player.x);
@@ -89,7 +98,7 @@ int main()
 
             auto text_sprites = text_generator.generate_top_left<32>(0, 0, str);
 
-            idle_sheperd_anim.update();
+            // idle_sheperd_anim.update();
             idle_sheep_anim.update();
             // enemy.updateAnimation();
 

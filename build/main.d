@@ -76,6 +76,11 @@ main.o: D:/butano/projects/testProject/src/main.cpp \
  D:/butano/butano/include/bn_utf8_characters_map.h \
  D:/butano/projects/testProject/build/bn_sprite_items_common_variable_8x16_font.h \
  D:/butano/projects/testProject/include/player_movement.h \
+ D:/butano/projects/testProject/include/player_animator.h \
+ D:/butano/projects/testProject/build/bn_sprite_items_shepherd_walk_spritesheet.h \
+ D:/butano/projects/testProject/build/bn_sprite_items_shepherd_jump_spritesheet.h \
+ D:/butano/projects/testProject/build/bn_sprite_items_shepherd_fall_spritesheet.h \
+ D:/butano/projects/testProject/build/bn_sprite_items_shepherd_attack_spritesheet.h \
  D:/butano/projects/testProject/include/enemy.h \
  D:/butano/butano/include/bn_fixed.h \
  D:/butano/butano/include/bn_optional.h \
@@ -163,6 +168,11 @@ D:/butano/butano/include/bn_sprite_font.h:
 D:/butano/butano/include/bn_utf8_characters_map.h:
 D:/butano/projects/testProject/build/bn_sprite_items_common_variable_8x16_font.h:
 D:/butano/projects/testProject/include/player_movement.h:
+D:/butano/projects/testProject/include/player_animator.h:
+D:/butano/projects/testProject/build/bn_sprite_items_shepherd_walk_spritesheet.h:
+D:/butano/projects/testProject/build/bn_sprite_items_shepherd_jump_spritesheet.h:
+D:/butano/projects/testProject/build/bn_sprite_items_shepherd_fall_spritesheet.h:
+D:/butano/projects/testProject/build/bn_sprite_items_shepherd_attack_spritesheet.h:
 D:/butano/projects/testProject/include/enemy.h:
 D:/butano/butano/include/bn_fixed.h:
 D:/butano/butano/include/bn_optional.h:

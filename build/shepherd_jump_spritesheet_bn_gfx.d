@@ -1,0 +1,1 @@
+shepherd_jump_spritesheet_bn_gfx.o: shepherd_jump_spritesheet_bn_gfx.s

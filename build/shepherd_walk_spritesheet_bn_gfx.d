@@ -1,0 +1,1 @@
+shepherd_walk_spritesheet_bn_gfx.o: shepherd_walk_spritesheet_bn_gfx.s

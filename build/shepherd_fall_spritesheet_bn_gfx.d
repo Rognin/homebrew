@@ -1,0 +1,1 @@
+shepherd_fall_spritesheet_bn_gfx.o: shepherd_fall_spritesheet_bn_gfx.s

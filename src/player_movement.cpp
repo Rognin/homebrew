@@ -81,6 +81,27 @@ bn::fixed player_movement::get_slope_floor_y(int tile_x, int tile_y, bn::fixed w
     return bn::fixed(tile_y * tile_height + height);
 }
 
+void player_movement::update_state() {
+
+    if(bn::keypad::a_pressed()) {
+        currentState = ATTACKING;
+        return;
+    }
+
+    if(!on_ground) {
+        if(y_velocity < 0)
+            currentState = JUMPING;
+        else if(y_velocity > 1)
+            currentState = FALLING;
+    }
+    else if(is_moving_horizontally) {
+        currentState = WALKING;
+    }
+    else {
+        currentState = IDLE;
+    }
+}
+
 void player_movement::horizontal_collision() {
 
     // Get level half sizes in pixels
@@ -310,14 +331,6 @@ bn::fixed player_movement::handle_movement(){
 
     y += y_velocity;
     vertical_collision();
-
-    // check harcoded ground collision
-    // if(y >= ground_y)
-    // {
-    //     y = ground_y;
-    //     y_velocity = 0;
-    //     on_ground = true;
-    // }
 
     if(is_moving_horizontally){
         return x_velocity;

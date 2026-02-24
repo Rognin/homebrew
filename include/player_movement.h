@@ -1,3 +1,5 @@
+#pragma once
+
 #include "bn_sprite_ptr.h"
 #include "bn_keypad.h"
 #include <vector>
@@ -29,6 +31,14 @@ enum TileType {
     TILE_SLOPE_11_UP_LEFT_3  = 14
 };
 
+enum PlayerState {
+    IDLE,
+    WALKING,
+    JUMPING,
+    FALLING,
+    ATTACKING
+};
+
 struct SlopeInfo {
     int rise;       // total rise (always 8 pixels for now)
     int horizontal_amount;        // number of tiles horizontally in a slope group (1, 2, 4)
@@ -56,6 +66,8 @@ class player_movement{
         void horizontal_collision();
         void vertical_collision();
         bn::fixed handle_movement(); // returns how much the player has moved to the right
+
+        void update_state();
 
         bn::fixed x;
         bn::fixed y;
@@ -97,6 +109,10 @@ class player_movement{
         bool is_slope(int tile_x, int tile_y) const ;
         SlopeInfo get_slope_info(int tile) const ;
         bn::fixed get_slope_floor_y(int tile_x, int tile_y, bn::fixed world_x) const;
+
+        // Animation handling----------------------------------------
+
+        PlayerState currentState;
 };
 
 
