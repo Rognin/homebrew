@@ -56,7 +56,7 @@
 <summary><strong>⬜ Collisions</strong></summary>
 
 - 🟩 Player / Background  
-- ⬜ Player / Object  
+- 🟩 Player / Object  
 - ⬜ Sprite collision rectangles in animated sprites  
 - 🟩 Reacting to collisions in code  
 
@@ -73,7 +73,7 @@
 <details>
 <summary><strong>⬜ Items</strong></summary>
 
-- ⬜ Walk over item/object to pick up  
+- 🟩 Walk over item/object to pick up  
 - ⬜ Bonus: animation or effect for pick-up  
 - ⬜ Bonus: inventory system  
 
@@ -93,11 +93,11 @@
 <details>
 <summary><strong>⬜ Music</strong></summary>
 
-- ⬜ Source music format, production tools, constraints  
-- ⬜ Toolchain for producing, exporting, and converting music  
-- ⬜ Target format (e.g., converter output)  
-- ⬜ Code integration into buildable project  
-- ⬜ Play music  
+- 🟩 Source music format, production tools, constraints  
+- 🟩 Toolchain for producing, exporting, and converting music  
+- 🟩 Target format (e.g., converter output)  
+- 🟩 Code integration into buildable project  
+- 🟩 Play music  
 - ⬜ Control music during gameplay  
 
 </details>
@@ -105,11 +105,11 @@
 <details>
 <summary><strong>⬜ Sound FX</strong></summary>
 
-- ⬜ Source sound format, production tools, constraints  
-- ⬜ Toolchain for producing, exporting, and converting sound effects  
-- ⬜ Target format (e.g., converter output)  
-- ⬜ Code integration into buildable project  
-- ⬜ Play sound effects  
-- ⬜ Control sound effects  
+- 🟩 Source sound format, production tools, constraints  
+- 🟩 Toolchain for producing, exporting, and converting sound effects  
+- 🟩 Target format (e.g., converter output)  
+- 🟩 Code integration into buildable project  
+- 🟩 Play sound effects  
+- 🟩 Control sound effects  
 
 </details>

@@ -24,7 +24,10 @@ player_movement.o: D:/butano/projects/testProject/src/player_movement.cpp \
  D:/butano/butano/include/bn_compare.h \
  D:/butano/butano/include/bn_point.h \
  D:/butano/butano/include/bn_fixed_point_fwd.h \
- D:/butano/butano/include/bn_keypad.h
+ D:/butano/butano/include/bn_keypad.h \
+ D:/butano/projects/testProject/build/bn_sound_items.h \
+ D:/butano/butano/include/bn_sound_item.h \
+ D:/butano/butano/include/bn_sound_handle.h
 D:/butano/projects/testProject/include/player_movement.h:
 D:/butano/butano/include/bn_sprite_ptr.h:
 D:/butano/butano/include/bn_optional.h:
@@ -51,3 +54,6 @@ D:/butano/butano/include/bn_compare.h:
 D:/butano/butano/include/bn_point.h:
 D:/butano/butano/include/bn_fixed_point_fwd.h:
 D:/butano/butano/include/bn_keypad.h:
+D:/butano/projects/testProject/build/bn_sound_items.h:
+D:/butano/butano/include/bn_sound_item.h:
+D:/butano/butano/include/bn_sound_handle.h:

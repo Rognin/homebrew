@@ -6,6 +6,7 @@
 #include "common_variable_8x16_sprite_font.h"
 #include "bn_string.h"
 #include <vector>
+#include "bn_sound_items.h"
 
 class sheep_manager{
 

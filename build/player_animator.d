@@ -49,7 +49,10 @@ player_animator.o: D:/butano/projects/testProject/src/player_animator.cpp \
  D:/butano/projects/testProject/build/bn_sprite_items_shepherd_fall_spritesheet.h \
  D:/butano/projects/testProject/build/bn_sprite_items_shepherd_attack_spritesheet.h \
  D:/butano/projects/testProject/include/player_movement.h \
- D:/butano/butano/include/bn_keypad.h
+ D:/butano/butano/include/bn_keypad.h \
+ D:/butano/projects/testProject/build/bn_sound_items.h \
+ D:/butano/butano/include/bn_sound_item.h \
+ D:/butano/butano/include/bn_sound_handle.h
 D:/butano/projects/testProject/include/player_animator.h:
 D:/butano/butano/include/bn_sprite_ptr.h:
 D:/butano/butano/include/bn_optional.h:
@@ -101,3 +104,6 @@ D:/butano/projects/testProject/build/bn_sprite_items_shepherd_fall_spritesheet.h
 D:/butano/projects/testProject/build/bn_sprite_items_shepherd_attack_spritesheet.h:
 D:/butano/projects/testProject/include/player_movement.h:
 D:/butano/butano/include/bn_keypad.h:
+D:/butano/projects/testProject/build/bn_sound_items.h:
+D:/butano/butano/include/bn_sound_item.h:
+D:/butano/butano/include/bn_sound_handle.h:

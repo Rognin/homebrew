@@ -84,6 +84,7 @@ bn::fixed player_movement::get_slope_floor_y(int tile_x, int tile_y, bn::fixed w
 void player_movement::update_state() {
 
     if(bn::keypad::a_pressed()) {
+        bn::sound_items::attack.play();
         currentState = ATTACKING;
         return;
     }
@@ -274,6 +275,7 @@ bn::fixed player_movement::handle_movement(){
     // Jump
     if(bn::keypad::up_pressed() && on_ground)
     {
+        bn::sound_items::jump.play();
         y_velocity = -jump_strength;
         on_ground = false;
     }

@@ -29,6 +29,8 @@ void sheep_manager::update(bn::fixed player_x, bn::fixed player_y) {
                 }
             }
 
+            on_sheep_collected(sheep_list[i]);
+
             sheep_list.erase(sheep_list.begin() + i);
 
             collected_count++;
@@ -62,6 +64,8 @@ void sheep_manager::spawn_one_sheep() {
 }
 
 void sheep_manager::on_sheep_collected(sheep collected_sheep) {
+
+    bn::sound_items::collect.play();
     // Mark the spawn point as free again
     for (spawn_point& cur_spawn_point : spawn_points) {
         if (cur_spawn_point.x == collected_sheep.get_x() && cur_spawn_point.y == collected_sheep.get_y()) {

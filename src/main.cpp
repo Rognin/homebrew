@@ -24,6 +24,8 @@
 #include "enemy.h"
 #include "level.h"
 
+#include "bn_music_items.h"
+
 // Screen size: 240x160 pixels
 
 int main()
@@ -62,6 +64,9 @@ int main()
     sheep_manager.spawn_one_sheep();
     sheep_manager.spawn_one_sheep();
     sheep_manager.spawn_one_sheep();
+
+    // music
+    bn::music_items::calm_down.play(0.2, true);
 
     while(! bn::keypad::start_pressed())
         {

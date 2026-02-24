@@ -76,6 +76,9 @@ main.o: D:/butano/projects/testProject/src/main.cpp \
  D:/butano/butano/include/bn_utf8_characters_map.h \
  D:/butano/projects/testProject/build/bn_sprite_items_common_variable_8x16_font.h \
  D:/butano/projects/testProject/include/player_movement.h \
+ D:/butano/projects/testProject/build/bn_sound_items.h \
+ D:/butano/butano/include/bn_sound_item.h \
+ D:/butano/butano/include/bn_sound_handle.h \
  D:/butano/projects/testProject/include/player_animator.h \
  D:/butano/projects/testProject/build/bn_sprite_items_shepherd_walk_spritesheet.h \
  D:/butano/projects/testProject/build/bn_sprite_items_shepherd_jump_spritesheet.h \
@@ -94,7 +97,8 @@ main.o: D:/butano/projects/testProject/src/main.cpp \
  D:/butano/butano/include/bn_music_item.h \
  D:/butano/butano/include/bn_assert.h \
  D:/butano/projects/testProject/include/csv_loader.h \
- D:/butano/projects/testProject/build/bn_regular_bg_items_level_512_512_slopes.h
+ D:/butano/projects/testProject/build/bn_regular_bg_items_level_512_512_slopes.h \
+ D:/butano/projects/testProject/build/bn_music_items.h
 D:/butano/butano/include/bn_core.h:
 D:/butano/butano/include/bn_span.h:
 D:/butano/butano/include/bn_array.h:
@@ -174,6 +178,9 @@ D:/butano/butano/include/bn_sprite_font.h:
 D:/butano/butano/include/bn_utf8_characters_map.h:
 D:/butano/projects/testProject/build/bn_sprite_items_common_variable_8x16_font.h:
 D:/butano/projects/testProject/include/player_movement.h:
+D:/butano/projects/testProject/build/bn_sound_items.h:
+D:/butano/butano/include/bn_sound_item.h:
+D:/butano/butano/include/bn_sound_handle.h:
 D:/butano/projects/testProject/include/player_animator.h:
 D:/butano/projects/testProject/build/bn_sprite_items_shepherd_walk_spritesheet.h:
 D:/butano/projects/testProject/build/bn_sprite_items_shepherd_jump_spritesheet.h:
@@ -193,3 +200,4 @@ D:/butano/butano/include/bn_music_item.h:
 D:/butano/butano/include/bn_assert.h:
 D:/butano/projects/testProject/include/csv_loader.h:
 D:/butano/projects/testProject/build/bn_regular_bg_items_level_512_512_slopes.h:
+D:/butano/projects/testProject/build/bn_music_items.h:

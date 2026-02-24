@@ -4,6 +4,7 @@
 #include "bn_keypad.h"
 #include <vector>
 #include <cmath>
+#include "bn_sound_items.h"
 
 enum TileType {
     TILE_EMPTY = -1,

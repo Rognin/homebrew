@@ -59,7 +59,10 @@ sheep_manager.o: D:/butano/projects/testProject/src/sheep_manager.cpp \
  D:/butano/butano/include/bn_sprite_font.h \
  D:/butano/butano/include/bn_utf8_characters_map.h \
  D:/butano/projects/testProject/build/bn_sprite_items_common_variable_8x16_font.h \
- D:/butano/butano/include/bn_string.h
+ D:/butano/butano/include/bn_string.h \
+ D:/butano/projects/testProject/build/bn_sound_items.h \
+ D:/butano/butano/include/bn_sound_item.h \
+ D:/butano/butano/include/bn_sound_handle.h
 D:/butano/projects/testProject/include/sheep_manager.h:
 D:/butano/butano/include/bn_fixed_point.h:
 D:/butano/butano/include/bn_fixed.h:
@@ -122,3 +125,6 @@ D:/butano/butano/include/bn_sprite_font.h:
 D:/butano/butano/include/bn_utf8_characters_map.h:
 D:/butano/projects/testProject/build/bn_sprite_items_common_variable_8x16_font.h:
 D:/butano/butano/include/bn_string.h:
+D:/butano/projects/testProject/build/bn_sound_items.h:
+D:/butano/butano/include/bn_sound_item.h:
+D:/butano/butano/include/bn_sound_handle.h:
