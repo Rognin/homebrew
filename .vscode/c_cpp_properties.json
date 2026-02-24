@@ -1,0 +1,31 @@
+{
+    "configurations": [
+        {
+            "name": "GBA (devkitARM)",
+            "compilerPath": "D:/devkitPro/devkitARM/bin/arm-none-eabi-g++.exe",
+            "cStandard": "c11",
+            "cppStandard": "c++17",
+            "intelliSenseMode": "gcc-arm",
+            "includePath": [
+                "${workspaceFolder}/**",
+                "${workspaceFolder}/include",
+                "${workspaceFolder}/src",
+                "D:/devkitPro/devkitARM/arm-none-eabi/include",
+                "D:/devkitPro/devkitARM/arm-none-eabi/include/c++/15.1.0",
+                "D:/devkitPro/devkitARM/arm-none-eabi/include/c++/15.1.0/backward",
+                "D:/devkitPro/devkitARM/lib/gcc/arm-none-eabi/15.1.0/include",
+                "D:/devkitPro/devkitARM/lib/gcc/arm-none-eabi/15.1.0/include-fixed",
+                "D:/butano/butano/include"
+            ],
+            "compilerArgs": [
+                "-mcpu=arm7tdmi",
+                "-mthumb",
+                "-std=c++17"
+            ],
+            "defines": [
+                "BN_CFG_FIXED_SIZE=32"
+            ]
+        }
+    ],
+    "version": 4
+}

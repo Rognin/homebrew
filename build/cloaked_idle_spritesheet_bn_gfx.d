@@ -1,0 +1,1 @@
+cloaked_idle_spritesheet_bn_gfx.o: cloaked_idle_spritesheet_bn_gfx.s

@@ -1,0 +1,7 @@
+{
+    "makefile.configureOnOpen": true,
+    "C_Cpp.errorSquiggles": "enabled",
+    "files.associations": {
+        "format": "cpp"
+    }
+}
