@@ -52,7 +52,20 @@ player_animator.o: D:/butano/projects/testProject/src/player_animator.cpp \
  D:/butano/butano/include/bn_keypad.h \
  D:/butano/projects/testProject/build/bn_sound_items.h \
  D:/butano/butano/include/bn_sound_item.h \
- D:/butano/butano/include/bn_sound_handle.h
+ D:/butano/butano/include/bn_sound_handle.h \
+ D:/butano/butano/include/bn_sprite_text_generator.h \
+ D:/butano/butano/include/bn_camera_ptr.h \
+ D:/butano/butano/include/bn_sprite_font.h \
+ D:/butano/butano/include/bn_sprite_item.h \
+ D:/butano/butano/include/bn_utf8_characters_map_ref.h \
+ D:/butano/butano/include/bn_power_of_two.h \
+ D:/butano/butano/include/bn_utf8_character.h \
+ D:/butano/butano/include/bn_string_view.h \
+ D:/butano/butano/include/bn_vector.h \
+ D:/butano/projects/testProject/include/common_variable_8x16_sprite_font.h \
+ D:/butano/butano/include/bn_sprite_font.h \
+ D:/butano/butano/include/bn_utf8_characters_map.h \
+ D:/butano/projects/testProject/build/bn_sprite_items_common_variable_8x16_font.h
 D:/butano/projects/testProject/include/player_animator.h:
 D:/butano/butano/include/bn_sprite_ptr.h:
 D:/butano/butano/include/bn_optional.h:
@@ -107,3 +120,16 @@ D:/butano/butano/include/bn_keypad.h:
 D:/butano/projects/testProject/build/bn_sound_items.h:
 D:/butano/butano/include/bn_sound_item.h:
 D:/butano/butano/include/bn_sound_handle.h:
+D:/butano/butano/include/bn_sprite_text_generator.h:
+D:/butano/butano/include/bn_camera_ptr.h:
+D:/butano/butano/include/bn_sprite_font.h:
+D:/butano/butano/include/bn_sprite_item.h:
+D:/butano/butano/include/bn_utf8_characters_map_ref.h:
+D:/butano/butano/include/bn_power_of_two.h:
+D:/butano/butano/include/bn_utf8_character.h:
+D:/butano/butano/include/bn_string_view.h:
+D:/butano/butano/include/bn_vector.h:
+D:/butano/projects/testProject/include/common_variable_8x16_sprite_font.h:
+D:/butano/butano/include/bn_sprite_font.h:
+D:/butano/butano/include/bn_utf8_characters_map.h:
+D:/butano/projects/testProject/build/bn_sprite_items_common_variable_8x16_font.h:

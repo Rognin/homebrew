@@ -27,6 +27,10 @@ public:
 
     void update_counter();
 
+    void spawn_initial_sheep();
+
+    void reset();
+
 private:
 
     std::vector<sheep> sheep_list;
@@ -34,6 +38,8 @@ private:
     bn::camera_ptr& camera;
 
     int sheep_pickup_radius = 12; // in pixels
+
+    int initial_sheep_count = 3;
 
     int collected_count = 0;
 

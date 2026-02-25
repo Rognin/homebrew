@@ -20,6 +20,7 @@
 
 #include "player_movement.h"
 #include "player_animator.h"
+#include "health_hud.h"
 #include "sheep_manager.h"
 #include "enemy.h"
 #include "level.h"
@@ -33,6 +34,8 @@ int main()
     bn::core::init();
 
     bn::sprite_text_generator text_generator(common::variable_8x16_sprite_font);
+    text_generator.set_alignment(bn::sprite_text_generator::alignment_type::LEFT);
+    bn::vector<bn::sprite_ptr, 32> text_sprites;
 
     // Create background
     bn::regular_bg_ptr mountains_bg = bn::regular_bg_items::mountains_bg.create_bg(0, 0);
@@ -53,6 +56,7 @@ int main()
     player.set_collision_data(&test_level.get_collision_data());
 
     player_animator animator(idle_hero);
+    health_hud hud(player.starting_health);
 
     // create camera
     bn::camera_ptr camera = bn::camera_ptr::create(0, 0);
@@ -61,9 +65,7 @@ int main()
     test_level.level_image.set_camera(camera);
 
     sheep_manager sheep_manager(camera);
-    sheep_manager.spawn_one_sheep();
-    sheep_manager.spawn_one_sheep();
-    sheep_manager.spawn_one_sheep();
+    sheep_manager.spawn_initial_sheep();
 
     // music
     bn::music_items::calm_down.play(0.2, true);
@@ -96,7 +98,8 @@ int main()
             str.append(bn::to_string<8>(player.on_slope ? 1 : 0));
             str.append(" ");
 
-            auto text_sprites = text_generator.generate_top_left<32>(0, 0, str);
+            text_sprites = {};
+            text_generator.generate(-112, 72, str, text_sprites);
             // enemy.updateAnimation();
 
             // update camera
@@ -108,6 +111,24 @@ int main()
             test_level.level_image.set_x(0);
 
             sheep_manager.update(player.x, player.y);
+
+            // temporary health debug
+            if(bn::keypad::l_pressed()) {
+                player.change_health(-1);
+            }
+
+            if(bn::keypad::r_pressed()) {
+                player.reset_health();
+            }
+
+            // check if player died
+
+            if(player.health <= 0) {
+                player.respawn();
+                sheep_manager.reset();
+            }
+
+            hud.set_health(player.health);
 
             bn::core::update();
         }

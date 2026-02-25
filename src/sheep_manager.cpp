@@ -90,3 +90,20 @@ int sheep_manager::get_random_free_spawn_point_index() {
     int random_index = free_indices[std::rand() % free_indices.size()];
     return random_index;
 }
+
+void sheep_manager::spawn_initial_sheep() {
+    for (int i = 0; i < initial_sheep_count; i++) {
+        spawn_one_sheep();
+    }
+}
+
+void sheep_manager::reset() {
+    sheep_list.clear();
+    for (spawn_point& sp : spawn_points) {
+        sp.occupied = false;
+    }
+    collected_count = 0;
+    update_counter();
+
+    spawn_initial_sheep();
+}

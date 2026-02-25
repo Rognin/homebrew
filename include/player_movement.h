@@ -5,6 +5,9 @@
 #include <vector>
 #include <cmath>
 #include "bn_sound_items.h"
+#include "bn_sprite_text_generator.h"
+#include "bn_vector.h"
+#include "common_variable_8x16_sprite_font.h"
 
 enum TileType {
     TILE_EMPTY = -1,
@@ -70,6 +73,13 @@ class player_movement{
 
         void update_state();
 
+        void change_health(int amount);
+        void reset_health();
+
+        void respawn();
+
+
+
         bn::fixed x;
         bn::fixed y;
 
@@ -114,6 +124,11 @@ class player_movement{
         // Animation handling----------------------------------------
 
         PlayerState currentState;
+
+        // Health
+        int health;
+        int max_health = 7;
+        int starting_health = 5;
 };
 
 

@@ -1,0 +1,31 @@
+#include "health_hud.h"
+#include "bn_sprite_items_heart.h"
+
+health_hud::health_hud(int starting_health) :
+    max_health(starting_health),
+    current_health(starting_health)
+{
+    constexpr int start_x = -112;  // top-left of screen
+    constexpr int start_y = -72;
+    constexpr int spacing = 16;
+
+    for(int i = 0; i < starting_health; i++)
+    {
+        bn::sprite_ptr heart = bn::sprite_items::heart.create_sprite(
+            start_x + i * spacing,
+            start_y
+        );
+
+        hearts.push_back(heart);
+    }
+}
+
+void health_hud::set_health(int value)
+{
+    current_health = bn::clamp(value, 0, max_health);
+
+    for(int i = 0; i < max_health; ++i)
+    {
+        hearts[i].set_visible(i < current_health);
+    }
+}

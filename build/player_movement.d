@@ -27,7 +27,34 @@ player_movement.o: D:/butano/projects/testProject/src/player_movement.cpp \
  D:/butano/butano/include/bn_keypad.h \
  D:/butano/projects/testProject/build/bn_sound_items.h \
  D:/butano/butano/include/bn_sound_item.h \
- D:/butano/butano/include/bn_sound_handle.h
+ D:/butano/butano/include/bn_sound_handle.h \
+ D:/butano/butano/include/bn_sprite_text_generator.h \
+ D:/butano/butano/include/bn_vector.h \
+ D:/butano/butano/include/bn_iterator.h \
+ D:/butano/butano/include/bn_vector_fwd.h \
+ D:/butano/butano/include/bn_camera_ptr.h \
+ D:/butano/butano/include/bn_sprite_font.h \
+ D:/butano/butano/include/bn_sprite_item.h \
+ D:/butano/butano/include/bn_sprite_shape_size.h \
+ D:/butano/butano/include/bn_bpp_mode.h \
+ D:/butano/butano/include/bn_sprite_tiles_item.h \
+ D:/butano/butano/include/bn_span.h D:/butano/butano/include/bn_array.h \
+ D:/butano/butano/include/bn_array_fwd.h \
+ D:/butano/butano/include/bn_span_fwd.h \
+ D:/butano/butano/include/bn_tile.h \
+ D:/butano/butano/include/bn_compression_type.h \
+ D:/butano/butano/include/bn_sprite_palette_item.h \
+ D:/butano/butano/include/bn_color.h \
+ D:/butano/butano/include/bn_utf8_characters_map_ref.h \
+ D:/butano/butano/include/bn_power_of_two.h \
+ D:/butano/butano/include/bn_utf8_character.h \
+ D:/butano/butano/include/bn_string_view.h \
+ D:/butano/butano/include/bn_vector.h \
+ D:/butano/projects/testProject/include/common_variable_8x16_sprite_font.h \
+ D:/butano/butano/include/bn_sprite_font.h \
+ D:/butano/butano/include/bn_utf8_characters_map.h \
+ D:/butano/projects/testProject/build/bn_sprite_items_common_variable_8x16_font.h \
+ D:/butano/butano/include/bn_sprite_item.h
 D:/butano/projects/testProject/include/player_movement.h:
 D:/butano/butano/include/bn_sprite_ptr.h:
 D:/butano/butano/include/bn_optional.h:
@@ -57,3 +84,31 @@ D:/butano/butano/include/bn_keypad.h:
 D:/butano/projects/testProject/build/bn_sound_items.h:
 D:/butano/butano/include/bn_sound_item.h:
 D:/butano/butano/include/bn_sound_handle.h:
+D:/butano/butano/include/bn_sprite_text_generator.h:
+D:/butano/butano/include/bn_vector.h:
+D:/butano/butano/include/bn_iterator.h:
+D:/butano/butano/include/bn_vector_fwd.h:
+D:/butano/butano/include/bn_camera_ptr.h:
+D:/butano/butano/include/bn_sprite_font.h:
+D:/butano/butano/include/bn_sprite_item.h:
+D:/butano/butano/include/bn_sprite_shape_size.h:
+D:/butano/butano/include/bn_bpp_mode.h:
+D:/butano/butano/include/bn_sprite_tiles_item.h:
+D:/butano/butano/include/bn_span.h:
+D:/butano/butano/include/bn_array.h:
+D:/butano/butano/include/bn_array_fwd.h:
+D:/butano/butano/include/bn_span_fwd.h:
+D:/butano/butano/include/bn_tile.h:
+D:/butano/butano/include/bn_compression_type.h:
+D:/butano/butano/include/bn_sprite_palette_item.h:
+D:/butano/butano/include/bn_color.h:
+D:/butano/butano/include/bn_utf8_characters_map_ref.h:
+D:/butano/butano/include/bn_power_of_two.h:
+D:/butano/butano/include/bn_utf8_character.h:
+D:/butano/butano/include/bn_string_view.h:
+D:/butano/butano/include/bn_vector.h:
+D:/butano/projects/testProject/include/common_variable_8x16_sprite_font.h:
+D:/butano/butano/include/bn_sprite_font.h:
+D:/butano/butano/include/bn_utf8_characters_map.h:
+D:/butano/projects/testProject/build/bn_sprite_items_common_variable_8x16_font.h:
+D:/butano/butano/include/bn_sprite_item.h:

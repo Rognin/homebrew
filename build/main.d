@@ -79,17 +79,18 @@ main.o: D:/butano/projects/testProject/src/main.cpp \
  D:/butano/projects/testProject/build/bn_sound_items.h \
  D:/butano/butano/include/bn_sound_item.h \
  D:/butano/butano/include/bn_sound_handle.h \
+ D:/butano/butano/include/bn_vector.h \
+ D:/butano/projects/testProject/include/common_variable_8x16_sprite_font.h \
  D:/butano/projects/testProject/include/player_animator.h \
  D:/butano/projects/testProject/build/bn_sprite_items_shepherd_walk_spritesheet.h \
  D:/butano/projects/testProject/build/bn_sprite_items_shepherd_jump_spritesheet.h \
  D:/butano/projects/testProject/build/bn_sprite_items_shepherd_fall_spritesheet.h \
  D:/butano/projects/testProject/build/bn_sprite_items_shepherd_attack_spritesheet.h \
+ D:/butano/projects/testProject/include/health_hud.h \
  D:/butano/projects/testProject/include/sheep_manager.h \
  D:/butano/butano/include/bn_fixed_point.h \
  D:/butano/projects/testProject/include/sheep.h \
  D:/butano/butano/include/bn_camera_ptr.h \
- D:/butano/butano/include/bn_vector.h \
- D:/butano/projects/testProject/include/common_variable_8x16_sprite_font.h \
  D:/butano/projects/testProject/include/enemy.h \
  D:/butano/butano/include/bn_fixed.h \
  D:/butano/butano/include/bn_optional.h \
@@ -181,17 +182,18 @@ D:/butano/projects/testProject/include/player_movement.h:
 D:/butano/projects/testProject/build/bn_sound_items.h:
 D:/butano/butano/include/bn_sound_item.h:
 D:/butano/butano/include/bn_sound_handle.h:
+D:/butano/butano/include/bn_vector.h:
+D:/butano/projects/testProject/include/common_variable_8x16_sprite_font.h:
 D:/butano/projects/testProject/include/player_animator.h:
 D:/butano/projects/testProject/build/bn_sprite_items_shepherd_walk_spritesheet.h:
 D:/butano/projects/testProject/build/bn_sprite_items_shepherd_jump_spritesheet.h:
 D:/butano/projects/testProject/build/bn_sprite_items_shepherd_fall_spritesheet.h:
 D:/butano/projects/testProject/build/bn_sprite_items_shepherd_attack_spritesheet.h:
+D:/butano/projects/testProject/include/health_hud.h:
 D:/butano/projects/testProject/include/sheep_manager.h:
 D:/butano/butano/include/bn_fixed_point.h:
 D:/butano/projects/testProject/include/sheep.h:
 D:/butano/butano/include/bn_camera_ptr.h:
-D:/butano/butano/include/bn_vector.h:
-D:/butano/projects/testProject/include/common_variable_8x16_sprite_font.h:
 D:/butano/projects/testProject/include/enemy.h:
 D:/butano/butano/include/bn_fixed.h:
 D:/butano/butano/include/bn_optional.h:

@@ -9,6 +9,7 @@ player_movement::player_movement(){
     y_velocity = 0;
     on_ground = true;
     on_slope = false;
+    health = 5;
 }
 
 void player_movement::on_spawn(){
@@ -101,6 +102,25 @@ void player_movement::update_state() {
     else {
         currentState = IDLE;
     }
+}
+
+void player_movement::change_health(int amount) {
+    health += amount;
+}
+
+void player_movement::reset_health() {
+    health = starting_health;
+}
+
+void player_movement::respawn() {
+    x = 0;
+    y = 30;
+    x_velocity = 0;
+    y_velocity = 0;
+    on_ground = true;
+    on_slope = false;
+
+    reset_health();
 }
 
 void player_movement::horizontal_collision() {
