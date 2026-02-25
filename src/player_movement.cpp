@@ -3,7 +3,7 @@
 player_movement::player_movement(){
     facing_left = false;
     x = 0;
-    y = 30;
+    y = 0;
     is_moving_horizontally = false;
     x_velocity = 0;
     y_velocity = 0;
@@ -84,9 +84,25 @@ bn::fixed player_movement::get_slope_floor_y(int tile_x, int tile_y, bn::fixed w
 
 void player_movement::update_state() {
 
-    if(bn::keypad::a_pressed()) {
+    if(bn::keypad::a_pressed() && !attack_active) {
         bn::sound_items::attack.play();
         currentState = ATTACKING;
+
+        attack_active = true;
+        current_attack = {
+            current_attack.x = x.floor_integer() + (facing_left ? -half_width : half_width) + (facing_left ? -8 : 8) - 8,
+            current_attack.y = y.floor_integer() - 8,
+            16,   // width
+            16,   // height
+            1,    // damage
+            10    // active for 10 frames
+        };
+
+        attack_debug_sprite = bn::sprite_items::debug_attack_sprite.create_sprite(
+        current_attack.x - x + 8 - camera_horizontal_offset, // + 8 to account for drawing from the center
+        current_attack.y - y + 8 - camera_vertical_offset
+        );
+        
         return;
     }
 
@@ -114,7 +130,7 @@ void player_movement::reset_health() {
 
 void player_movement::respawn() {
     x = 0;
-    y = 30;
+    y = 0;
     x_velocity = 0;
     y_velocity = 0;
     on_ground = true;
@@ -215,10 +231,8 @@ void player_movement::vertical_collision() {
     int top_tile    = std::floor(float(top) / tile_height);
     int bottom_tile = std::floor(float(bottom) / tile_height);
 
-    debug_value_1 = feet_pixel_x;
-    debug_value_2 = feet_pixel_y;
-    debug_value_3 = x.floor_integer();
-    debug_value_4 = y.floor_integer();
+    debug_value_1 = x.floor_integer();
+    debug_value_2 = y.floor_integer();
 
     // check if on_slope
     if(is_slope(std::floor(float(feet_pixel_x) / tile_width), std::floor(float(feet_pixel_y) / tile_height))){
@@ -288,7 +302,7 @@ void player_movement::vertical_collision() {
     }
 }
 
-bn::fixed player_movement::handle_movement(){
+bn::fixed player_movement::handle_movement_and_attack(){
 
     // Read inputs
 
@@ -348,11 +362,41 @@ bn::fixed player_movement::handle_movement(){
         y_velocity = max_falling_speed;
     }
 
+    // Handle collisions and move player
+
     x += x_velocity;
     horizontal_collision();
 
     y += y_velocity;
     vertical_collision();
+
+    // Handle attack hitbox duration
+
+    if(attack_active)
+    {
+        current_attack.frames_left--;
+
+        current_attack.x = x.floor_integer() + (facing_left ? -half_width : half_width) + (facing_left ? -8 : 8) - 8;
+        current_attack.y = y.floor_integer() - 8;
+
+        if(attack_debug_sprite.has_value())
+        {
+            attack_debug_sprite.value().set_x(
+                current_attack.x - x + 8 - camera_horizontal_offset
+            );
+            attack_debug_sprite.value().set_y(
+                current_attack.y - y + 8 - camera_vertical_offset
+            );
+            debug_value_3 = current_attack.x;
+            debug_value_4 = current_attack.y;
+        }
+
+        if(current_attack.frames_left <= 0)
+        {
+            attack_active = false;
+            attack_debug_sprite = bn::nullopt;
+        }
+    }
 
     if(is_moving_horizontally){
         return x_velocity;

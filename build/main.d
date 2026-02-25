@@ -81,6 +81,7 @@ main.o: D:/butano/projects/testProject/src/main.cpp \
  D:/butano/butano/include/bn_sound_handle.h \
  D:/butano/butano/include/bn_vector.h \
  D:/butano/projects/testProject/include/common_variable_8x16_sprite_font.h \
+ D:/butano/projects/testProject/build/bn_sprite_items_debug_attack_sprite.h \
  D:/butano/projects/testProject/include/player_animator.h \
  D:/butano/projects/testProject/build/bn_sprite_items_shepherd_walk_spritesheet.h \
  D:/butano/projects/testProject/build/bn_sprite_items_shepherd_jump_spritesheet.h \
@@ -184,6 +185,7 @@ D:/butano/butano/include/bn_sound_item.h:
 D:/butano/butano/include/bn_sound_handle.h:
 D:/butano/butano/include/bn_vector.h:
 D:/butano/projects/testProject/include/common_variable_8x16_sprite_font.h:
+D:/butano/projects/testProject/build/bn_sprite_items_debug_attack_sprite.h:
 D:/butano/projects/testProject/include/player_animator.h:
 D:/butano/projects/testProject/build/bn_sprite_items_shepherd_walk_spritesheet.h:
 D:/butano/projects/testProject/build/bn_sprite_items_shepherd_jump_spritesheet.h:

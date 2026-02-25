@@ -8,6 +8,7 @@
 #include "bn_sprite_text_generator.h"
 #include "bn_vector.h"
 #include "common_variable_8x16_sprite_font.h"
+#include "bn_sprite_items_debug_attack_sprite.h"
 
 enum TileType {
     TILE_EMPTY = -1,
@@ -50,6 +51,16 @@ struct SlopeInfo {
     bool up_right;  // direction, true if up-right, false if up-left
 };
 
+struct attack_hitbox
+{
+    int x; // top-left corner of hitbox
+    int y; // top-left corner of hitbox
+    int width;
+    int height;
+    int damage;
+    int frames_left;
+};
+
 class player_movement{
 
     public:
@@ -69,7 +80,7 @@ class player_movement{
         bool is_tile_solid(int tile_x, int tile_y) const;
         void horizontal_collision();
         void vertical_collision();
-        bn::fixed handle_movement(); // returns how much the player has moved to the right
+        bn::fixed handle_movement_and_attack(); // returns how much the player has moved to the right
 
         void update_state();
 
@@ -96,7 +107,6 @@ class player_movement{
         bn::fixed y_velocity;
         bool on_ground = false;
 
-        const bn::fixed ground_y = 90;
         const bn::fixed gravity = 0.1;
         const bn::fixed fall_gravity = 0.2;
         const bn::fixed jump_strength = 4.1;
@@ -125,10 +135,19 @@ class player_movement{
 
         PlayerState currentState;
 
-        // Health
+        // Health handling----------------------------------------
         int health;
         int max_health = 7;
         int starting_health = 5;
+
+        // Attack handling ----------------------------------------
+        bool attack_active = false;
+        attack_hitbox current_attack;
+        bn::optional<bn::sprite_ptr> attack_debug_sprite;
+
+        // Camera settings----------------------------------------
+        int camera_horizontal_offset = 0;
+        int camera_vertical_offset = -40;
 };
 
 

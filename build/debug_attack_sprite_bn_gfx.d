@@ -1,0 +1,1 @@
+debug_attack_sprite_bn_gfx.o: debug_attack_sprite_bn_gfx.s

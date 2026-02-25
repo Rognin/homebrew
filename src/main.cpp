@@ -44,7 +44,7 @@ int main()
     Level test_level(Level::SpawnPoint{0, 0});
     test_level.load();
 
-    bn::sprite_ptr idle_hero = bn::sprite_items::shepherd_idle.create_sprite(0, 30);
+    bn::sprite_ptr idle_hero = bn::sprite_items::shepherd_idle.create_sprite(0, 0);
     idle_hero.set_horizontal_flip(false);
 
     
@@ -72,7 +72,7 @@ int main()
 
     while(! bn::keypad::start_pressed())
         {
-            player.handle_movement();
+            player.handle_movement_and_attack();
             player.update_state();
 
             animator.set_state(player.currentState);
@@ -103,8 +103,8 @@ int main()
             // enemy.updateAnimation();
 
             // update camera
-            camera.set_x(player.x);
-            camera.set_y(player.y - 40);
+            camera.set_x(player.x + player.camera_horizontal_offset);
+            camera.set_y(player.y + player.camera_vertical_offset);
 
             mountains_bg.set_x(-camera.x() / 4);
             houses_bg.set_x(-camera.x() / 2);

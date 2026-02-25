@@ -24,7 +24,7 @@
 - 🟩 Minimum: move (walk and/or run) left/right  
 - 🟩 Minimum: jump  
 - 🟩 Minimum: fall  
-- ⬜ Minimum: attack  
+- 🟩 Minimum: attack  
 - ⬜ Bonus: multiple attacks (melee and/or range)  
 - 🟩 Collision detection with background tiles  
 - 🟩 Walk on floor / platforms  
@@ -83,7 +83,7 @@
 <summary><strong>⬜ Damage / Health</strong></summary>
 
 - ⬜ Player loses health upon touching enemy  
-- ⬜ Player dies when health ≤ 0  
+- 🟩 Player dies when health ≤ 0  
 - ⬜ Enemy gets hit upon attack  
 - ⬜ Visual effect (e.g., flash white)  
 - ⬜ Bonus: enemy dies and scoring / reward system  

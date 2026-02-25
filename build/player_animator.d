@@ -65,7 +65,8 @@ player_animator.o: D:/butano/projects/testProject/src/player_animator.cpp \
  D:/butano/projects/testProject/include/common_variable_8x16_sprite_font.h \
  D:/butano/butano/include/bn_sprite_font.h \
  D:/butano/butano/include/bn_utf8_characters_map.h \
- D:/butano/projects/testProject/build/bn_sprite_items_common_variable_8x16_font.h
+ D:/butano/projects/testProject/build/bn_sprite_items_common_variable_8x16_font.h \
+ D:/butano/projects/testProject/build/bn_sprite_items_debug_attack_sprite.h
 D:/butano/projects/testProject/include/player_animator.h:
 D:/butano/butano/include/bn_sprite_ptr.h:
 D:/butano/butano/include/bn_optional.h:
@@ -133,3 +134,4 @@ D:/butano/projects/testProject/include/common_variable_8x16_sprite_font.h:
 D:/butano/butano/include/bn_sprite_font.h:
 D:/butano/butano/include/bn_utf8_characters_map.h:
 D:/butano/projects/testProject/build/bn_sprite_items_common_variable_8x16_font.h:
+D:/butano/projects/testProject/build/bn_sprite_items_debug_attack_sprite.h:
