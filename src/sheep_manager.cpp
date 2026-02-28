@@ -63,6 +63,10 @@ void sheep_manager::spawn_one_sheep() {
     sheep_list.push_back(sheep(spawn_position.x, spawn_position.y, camera));
 }
 
+void sheep_manager::spawn_sheep_at(bn::fixed x, bn::fixed y) {
+    sheep_list.push_back(sheep(x, y, camera));
+}
+
 void sheep_manager::on_sheep_collected(sheep collected_sheep) {
 
     bn::sound_items::collect.play();

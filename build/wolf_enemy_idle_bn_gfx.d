@@ -1,0 +1,1 @@
+wolf_enemy_idle_bn_gfx.o: wolf_enemy_idle_bn_gfx.s

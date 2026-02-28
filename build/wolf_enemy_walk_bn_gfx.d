@@ -1,0 +1,1 @@
+wolf_enemy_walk_bn_gfx.o: wolf_enemy_walk_bn_gfx.s

@@ -1,8 +1,8 @@
 #pragma once
 
 inline bool aabb_overlap(
-    int ax, int ay, int aw, int ah,
-    int bx, int by, int bw, int bh)
+    bn::fixed ax, bn::fixed ay, int aw, int ah,
+    bn::fixed bx, bn::fixed by, int bw, int bh)
 {
     return ax < bx + bw &&
            ax + aw > bx &&

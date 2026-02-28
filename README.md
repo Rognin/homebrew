@@ -65,7 +65,7 @@
 <details>
 <summary><strong>⬜ Enemy</strong></summary>
 
-- ⬜ Simple behavior (move left/right)  
+- 🟩 Simple behavior (move left/right)  
 - ⬜ Bonus: melee and/or ranged attack  
 
 </details>
@@ -82,11 +82,11 @@
 <details>
 <summary><strong>⬜ Damage / Health</strong></summary>
 
-- ⬜ Player loses health upon touching enemy  
+- 🟩 Player loses health upon touching enemy  
 - 🟩 Player dies when health ≤ 0  
-- ⬜ Enemy gets hit upon attack  
-- ⬜ Visual effect (e.g., flash white)  
-- ⬜ Bonus: enemy dies and scoring / reward system  
+- 🟩 Enemy gets hit upon attack  
+- 🟩 Visual effect (e.g., flash white)  
+- 🟩 Bonus: enemy dies and scoring / reward system  
 
 </details>
 

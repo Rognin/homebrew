@@ -67,6 +67,13 @@ int main()
     sheep_manager sheep_manager(camera);
     sheep_manager.spawn_initial_sheep();
 
+    // create enemies
+    std::vector<enemy> enemies;
+    enemies.reserve(10);
+    enemies.emplace_back(enemy(-167, 225, camera));
+    enemies.emplace_back(enemy(47, 225, camera));
+    enemies.emplace_back(enemy(140, 225, camera));
+
     // music
     bn::music_items::calm_down.play(0.2, true);
 
@@ -80,7 +87,12 @@ int main()
 
             idle_hero.set_horizontal_flip(player.facing_left);
             idle_hero.set_x(player.x);
-            idle_hero.set_y(player.y);  
+            idle_hero.set_y(player.y);
+            if(player.invincibility_timer > 0) {
+                idle_hero.set_visible((player.invincibility_timer / 4) % 2); // blinking effect when damaged
+            } else {
+                idle_hero.set_visible(true);
+            }
 
             bn::string<32> str;
 
@@ -99,7 +111,7 @@ int main()
             str.append(" ");
 
             text_sprites = {};
-            text_generator.generate(-112, 72, str, text_sprites);
+            // text_generator.generate(-112, 72, str, text_sprites);
             // enemy.updateAnimation();
 
             // update camera
@@ -112,7 +124,48 @@ int main()
 
             sheep_manager.update(player.x, player.y);
 
-            // temporary health debug
+            // chack if player hit an enemy + spawn sheep on enemy death
+            for(int i = enemies.size() - 1; i >= 0; i--) {
+                enemies[i].update();
+                enemies[i].check_hit(player.current_attack.x, player.current_attack.y, player.attack_active);
+
+                if(!enemies[i].is_alive()) {
+                    sheep_manager.spawn_sheep_at(
+                        enemies[i].get_x(),
+                        enemies[i].get_y()
+                    );
+
+                    enemies.erase(enemies.begin() + i);
+                }
+}
+
+            // check enemy collisions with player
+            for (enemy& enemy : enemies) {
+                if (!enemy.is_alive())
+                    continue;
+
+                if (player.invincibility_timer > 0)
+                    continue;
+
+                // hardcoded player hitbox for now
+                int px = player.x.floor_integer() - player.half_width + player.collision_box_offset_x;
+                int py = player.y.floor_integer() - player.half_height - player.collision_box_offset_y;
+                int pw = player.half_width * 2;
+                int ph = player.half_height * 2;
+
+                // hardcoded enemy hitbox for now
+                int ex = enemy.get_x().floor_integer() - 16;
+                int ey = enemy.get_y().floor_integer();
+                int ew = 32;
+                int eh = 16;
+
+                if (aabb_overlap(px, py, pw, ph, ex, ey, ew, eh)) {
+                    player.change_health(-1);
+                    player.invincibility_timer = player.invincibility_frames;
+                }
+            }
+
+            // health debug
             if(bn::keypad::l_pressed()) {
                 player.change_health(-1);
             }

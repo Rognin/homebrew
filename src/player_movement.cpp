@@ -84,6 +84,10 @@ bn::fixed player_movement::get_slope_floor_y(int tile_x, int tile_y, bn::fixed w
 
 void player_movement::update_state() {
 
+    if (invincibility_timer > 0) {
+        invincibility_timer--;
+    }
+
     if(bn::keypad::a_pressed() && !attack_active) {
         bn::sound_items::attack.play();
         currentState = ATTACKING;

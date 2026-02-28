@@ -93,9 +93,12 @@ main.o: D:/butano/projects/testProject/src/main.cpp \
  D:/butano/projects/testProject/include/sheep.h \
  D:/butano/butano/include/bn_camera_ptr.h \
  D:/butano/projects/testProject/include/enemy.h \
+ D:/butano/projects/testProject/build/bn_sprite_items_wolf_enemy_idle.h \
+ D:/butano/projects/testProject/build/bn_sprite_items_wolf_enemy_walk.h \
  D:/butano/butano/include/bn_fixed.h \
- D:/butano/butano/include/bn_optional.h \
+ D:/butano/projects/testProject/include/collision_utils.h \
  D:/butano/projects/testProject/include/level.h \
+ D:/butano/butano/include/bn_optional.h \
  D:/butano/butano/include/bn_music_item.h \
  D:/butano/butano/include/bn_assert.h \
  D:/butano/projects/testProject/include/csv_loader.h \
@@ -197,9 +200,12 @@ D:/butano/butano/include/bn_fixed_point.h:
 D:/butano/projects/testProject/include/sheep.h:
 D:/butano/butano/include/bn_camera_ptr.h:
 D:/butano/projects/testProject/include/enemy.h:
+D:/butano/projects/testProject/build/bn_sprite_items_wolf_enemy_idle.h:
+D:/butano/projects/testProject/build/bn_sprite_items_wolf_enemy_walk.h:
 D:/butano/butano/include/bn_fixed.h:
-D:/butano/butano/include/bn_optional.h:
+D:/butano/projects/testProject/include/collision_utils.h:
 D:/butano/projects/testProject/include/level.h:
+D:/butano/butano/include/bn_optional.h:
 D:/butano/butano/include/bn_music_item.h:
 D:/butano/butano/include/bn_assert.h:
 D:/butano/projects/testProject/include/csv_loader.h:

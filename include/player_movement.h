@@ -139,6 +139,8 @@ class player_movement{
         int health;
         int max_health = 7;
         int starting_health = 5;
+        int invincibility_timer = 0;
+        int invincibility_frames = 30;
 
         // Attack handling ----------------------------------------
         bool attack_active = false;

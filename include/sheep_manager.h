@@ -21,6 +21,7 @@ public:
 
     void update(bn::fixed player_x, bn::fixed player_y);
     void spawn_one_sheep();
+    void spawn_sheep_at(bn::fixed x, bn::fixed y);
     int get_random_free_spawn_point_index();
 
     void on_sheep_collected(sheep collected_sheep);
