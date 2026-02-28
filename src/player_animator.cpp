@@ -31,6 +31,7 @@
 
     void player_animator::update() {
 
+        // Attacking overrides other states, so if attack is active, force state to ATTACKING
         if(attack_active && currentState != ATTACKING) {
             currentState = ATTACKING;
         }

@@ -24,16 +24,16 @@ void enemy::update() {
     walk_anim.update();
     if (invincibility_timer > 0) {
         invincibility_timer--;
-        sprite.set_visible((invincibility_timer / 4) % 2); // blinking effect when damaged
+        sprite.set_visible((invincibility_timer / 4) % 2); // Blinking effect when damaged
     } else {
         sprite.set_visible(true);
     }
 
-    // left-right movement
+    // Left-right movement
     bn::fixed direction = facing_left ? -1 : 1;
     x += direction * speed;
 
-    // Turn around at patrol limits
+    // Turn around at movement limits
     if (x < initial_x - movement_range) {
         x = initial_x - movement_range;
         facing_left = false;
@@ -47,13 +47,14 @@ void enemy::update() {
     sprite.set_horizontal_flip(!facing_left);
 }
 
+// This checks if the enemy got hit
 void enemy::check_hit(bn::fixed player_attack_x, bn::fixed player_attack_y, bool player_attacking) {
 
     if(invincibility_timer > 0) {
         return;
     }
 
-    // hardcoded hitboxes for now
+    // Hardcoded hitboxes for now
     if (player_attacking && aabb_overlap(x - 16, y, 32, 16, player_attack_x, player_attack_y, 16, 16)) {
         health--;
         invincibility_timer = invincibility_frames;
@@ -63,6 +64,7 @@ void enemy::check_hit(bn::fixed player_attack_x, bn::fixed player_attack_y, bool
     }
 }
 
+// On death just hide the sprite. TODO: properly remove the enemy from the game
 void enemy::on_death() {
     sprite.set_visible(false);
 }

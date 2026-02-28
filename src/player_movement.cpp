@@ -16,10 +16,12 @@ void player_movement::on_spawn(){
 
 }
 
+// Sets the current level's collision data, which is a 2D vector of integers representing the type of tile at each position
 void player_movement::set_collision_data(const std::vector<std::vector<int>>* data) {
     collision_data = data;
 }
 
+// Checks if the tile at the given tile coordinates is solid (not a slope either, specifically a full solid tile)
 bool player_movement::is_tile_solid(int tile_x, int tile_y) const {
     if (!collision_data) return false;
     if (tile_y < 0 || tile_y >= (int)collision_data->size()) return false;
@@ -27,6 +29,7 @@ bool player_movement::is_tile_solid(int tile_x, int tile_y) const {
     return (*collision_data)[tile_y][tile_x] == 0; // -1 = empty
 }
 
+// Checks if the tile at the given tile coordinates is a slope tile
 bool player_movement::is_slope(int tile_x, int tile_y) const
 {
     if (!collision_data) return false;
@@ -36,6 +39,8 @@ bool player_movement::is_slope(int tile_x, int tile_y) const
     return (t >= TILE_SLOPE_45_UP_RIGHT && t <= TILE_SLOPE_11_UP_LEFT_3);
 }
 
+// Returns the slope information for the given tile type, including rise,
+// amount of slopes in the set, index in the set, and direction
 SlopeInfo player_movement::get_slope_info(int tile) const
 {
     // 45°
@@ -61,6 +66,7 @@ SlopeInfo player_movement::get_slope_info(int tile) const
     return {0, 0, 0, false};
 }
 
+// Given the tile coordinates and world x coordinate, returns the y coordinate of the slope "ground" at that x position
 bn::fixed player_movement::get_slope_floor_y(int tile_x, int tile_y, bn::fixed world_x) const
 {
     int tile = (*collision_data)[tile_y][tile_x];
@@ -82,6 +88,7 @@ bn::fixed player_movement::get_slope_floor_y(int tile_x, int tile_y, bn::fixed w
     return bn::fixed(tile_y * tile_height + height);
 }
 
+// Handles player state and attack hitbox updates
 void player_movement::update_state() {
 
     if (invincibility_timer > 0) {
@@ -143,6 +150,7 @@ void player_movement::respawn() {
     reset_health();
 }
 
+// Handles horizontal collision
 void player_movement::horizontal_collision() {
 
     // Get level half sizes in pixels
@@ -159,11 +167,12 @@ void player_movement::horizontal_collision() {
     int top_tile    = std::floor(float(top + 1) / tile_height);
     int bottom_tile = std::floor(float(bottom - 1) / tile_height);
 
+    // Get top and bottom borders of range where collision needs to be checked
     int loop_top = top_tile;
     int loop_bottom = bottom_tile;
 
-    // feet_pixel_x is 7 pixels to the right of left collider edge
-    // feet_pixel_y is at the bottom collider edge
+    // Feet_pixel_x is 7 pixels to the right of left collider edge
+    // Feet_pixel_y is at the bottom collider edge
     int feet_pixel_x = left + collision_box_offset_x + half_width;
     int feet_pixel_y = bottom;
 
@@ -172,20 +181,23 @@ void player_movement::horizontal_collision() {
     // debug_value_3 = float(feet_pixel_x) / tile_width;
     // debug_value_4 = float(feet_pixel_y) / tile_height;
 
+    // Don't check the bottom tile collision if on a slope
     if(is_slope(std::floor(float(feet_pixel_x) / tile_width), std::floor(float(feet_pixel_y - 1) / tile_height))){
         loop_bottom -= 1;
     }
 
+    // Don't collide with ceiling if jumping to prevent stopping at a ceiling contact
     if(!on_ground) {
         loop_top += 1;
     }
 
+    // Similar to the second if above this, not sure why I did it this way but now I'm scared to change it
     if(on_slope){
-        // if on slope don't check collision at 1 above ground level to avoid getting stuck on tile behind slope
+        // If on slope don't check collision at 1 above ground level to avoid getting stuck on tile behind slope
         loop_bottom -= 2;
     }
 
-    if (x_velocity > 0) { // moving right
+    if (x_velocity > 0) { // Moving right
         int right_check = right + 1;
         int right_tile_check = std::floor(float(right_check) / tile_width);
         for(int ty = loop_top; ty <= loop_bottom; ty++) {
@@ -196,7 +208,7 @@ void player_movement::horizontal_collision() {
                 break;
             }
         }
-    } else if (x_velocity < 0) { // moving left
+    } else if (x_velocity < 0) { // Moving left
         int left_check = left - 1;
         int left_tile_check = std::floor(float(left_check) / tile_width);
         for(int ty = loop_top; ty <= loop_bottom; ty++) {
@@ -210,6 +222,7 @@ void player_movement::horizontal_collision() {
     }
 }
 
+// Handles vertical collision and slope logic
 void player_movement::vertical_collision() {
 
     on_ground = false;
@@ -223,9 +236,9 @@ void player_movement::vertical_collision() {
     int top    = (y.floor_integer() + level_half_height) - half_height - collision_box_offset_y;
     int bottom = (y.floor_integer() + level_half_height) + half_height - collision_box_offset_y;
 
-    // feet_pixel_x is 7 pixels to the right of left collider edge
-    // feet_pixel_y is at the bottom collider edge
-    // during vertical movement the collider is 1 pixel inside the ground because
+    // Feet_pixel_x is 7 pixels to the right of left collider edge
+    // Feet_pixel_y is at the bottom collider edge
+    // During vertical movement the collider is 1 pixel inside the ground because
     // we just incremented vertical position but haven't resolved collisions yet
     int feet_pixel_x = left + collision_box_offset_x + half_width;
     int feet_pixel_y = bottom;
@@ -238,7 +251,7 @@ void player_movement::vertical_collision() {
     debug_value_1 = x.floor_integer();
     debug_value_2 = y.floor_integer();
 
-    // check if on_slope
+    // Check if on_slope
     if(is_slope(std::floor(float(feet_pixel_x) / tile_width), std::floor(float(feet_pixel_y) / tile_height))){
         on_slope = true;
     } else {
@@ -249,7 +262,7 @@ void player_movement::vertical_collision() {
         }
     }
 
-    if (y_velocity >= 0) { // falling
+    if (y_velocity >= 0) { // Falling
         bool collided = false;
         int check_bottom = feet_pixel_y;
         int bottom_tile_check = std::floor(float(check_bottom) / tile_height);
@@ -294,7 +307,7 @@ void player_movement::vertical_collision() {
             }
         }
 
-    } else if (y_velocity < 0) { // jumping
+    } else if (y_velocity < 0) { // Jumping
         for(int tx = left_tile; tx <= right_tile; tx++) {
             if(is_tile_solid(tx, top_tile)) {
                 int collision_top = (top_tile + 1) * tile_height;

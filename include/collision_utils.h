@@ -1,3 +1,4 @@
+// Class that contains utility functions for collision detection, for now just AABB overlap
 #pragma once
 
 inline bool aabb_overlap(

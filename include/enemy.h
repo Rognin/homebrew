@@ -1,3 +1,5 @@
+// Enemy class
+
 #pragma once
 #include "bn_sprite_ptr.h"
 #include "bn_sprite_items_wolf_enemy_idle.h"

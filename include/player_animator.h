@@ -1,3 +1,5 @@
+// Class that manages player animations based on the current state
+
 #pragma once
 
 #include "bn_sprite_ptr.h"

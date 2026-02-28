@@ -1,3 +1,5 @@
+// Class that manages player movement and state, including physics and collision detection
+
 #pragma once
 
 #include "bn_sprite_ptr.h"

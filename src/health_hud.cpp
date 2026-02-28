@@ -5,9 +5,10 @@ health_hud::health_hud(int starting_health) :
     max_health(starting_health),
     current_health(starting_health)
 {
-    constexpr int start_x = -112;  // top-left of screen
-    constexpr int start_y = -72;
-    constexpr int spacing = 16;
+    // top-left of screen
+    int start_x = -112;
+    int start_y = -72;
+    int spacing = 16;
 
     for(int i = 0; i < starting_health; i++)
     {

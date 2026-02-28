@@ -1,3 +1,5 @@
+// Class that manages the level, including image and collision data
+
 #pragma once
 
 #include "bn_regular_bg_ptr.h"

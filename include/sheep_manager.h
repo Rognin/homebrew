@@ -1,3 +1,5 @@
+// Class that manages the sheep (collectables), including spawning, updating, and collecting them
+
 #pragma once
 #include "bn_fixed_point.h"
 #include "sheep.h"

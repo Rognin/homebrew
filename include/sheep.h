@@ -1,3 +1,5 @@
+// Class that represents a sheep collectable, including its position, sprite, and animation
+
 #pragma once
 #include "bn_sprite_ptr.h"
 #include "bn_sprite_animate_actions.h"

@@ -13,6 +13,7 @@ sheep_manager::sheep_manager(bn::camera_ptr& camera) : camera(camera),
     );
 }
 
+// Update sheep positions and check for collection
 void sheep_manager::update(bn::fixed player_x, bn::fixed player_y) {
     for (int i = sheep_list.size() - 1; i >= 0; --i) {
         sheep_list[i].update();
@@ -36,7 +37,7 @@ void sheep_manager::update(bn::fixed player_x, bn::fixed player_y) {
             collected_count++;
             update_counter();
 
-            spawn_one_sheep(); // spawn replacement
+            spawn_one_sheep(); // Spawn replacement, so the number of sheep to collect doesn't decrease
         }
     }
 }
@@ -52,6 +53,7 @@ void sheep_manager::update_counter() {
     );
 }
 
+// Spawns a sheep at a random free spawn point
 void sheep_manager::spawn_one_sheep() {
     int spawn_position_index = get_random_free_spawn_point_index();
     if(spawn_position_index == -1) {
@@ -63,6 +65,7 @@ void sheep_manager::spawn_one_sheep() {
     sheep_list.push_back(sheep(spawn_position.x, spawn_position.y, camera));
 }
 
+// Spawns a sheep at the given position
 void sheep_manager::spawn_sheep_at(bn::fixed x, bn::fixed y) {
     sheep_list.push_back(sheep(x, y, camera));
 }
@@ -79,6 +82,7 @@ void sheep_manager::on_sheep_collected(sheep collected_sheep) {
     }
 }
 
+// Returns the index of a random free spawn point, or -1 if there are no free spawn points
 int sheep_manager::get_random_free_spawn_point_index() {
     std::vector<int> free_indices;
     for (size_t i = 0; i < spawn_points.size(); i++) {
@@ -101,6 +105,7 @@ void sheep_manager::spawn_initial_sheep() {
     }
 }
 
+// Clears all sheep and respawns the initial sheep
 void sheep_manager::reset() {
     sheep_list.clear();
     for (spawn_point& sp : spawn_points) {

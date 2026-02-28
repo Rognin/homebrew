@@ -33,6 +33,8 @@ void Level::unload()
     collision_data.clear();
 }
 
+// The level csv file gets converted to a 2D vector of integers via a separate script, here the result is pasted
+// -1 is empty, 0 is solid, and 1-15 are different slope types (with different angles and orientations)
 std::vector<std::vector<int>> Level::_read_collision_csv(const std::string& filename)
 {
     return {
